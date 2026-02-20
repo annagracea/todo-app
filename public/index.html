@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic To-Do App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Animated background blobs -->
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+
+  <div class="container">
+    <div class="header">
+      <h1>✨ My To-Do</h1>
+      <button id="darkToggle">🌙</button>
+    </div>
+
+    <div class="input-section">
+      <input type="text" id="taskInput" placeholder="Add a new task...">
+      <button onclick="addTodo()" class="add-btn">Add</button>
+    </div>
+
+    <p id="counter">0 tasks</p>
+    <ul id="todoList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

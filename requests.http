@@ -1,0 +1,13 @@
+### Get all todos
+GET http://localhost:3000/todos
+
+### Add a new todo
+POST http://localhost:3000/todos
+Content-Type: application/json
+
+{
+  "task": "Learn REST Client"
+}
+
+### Delete a todo
+DELETE http://localhost:3000/todos/1

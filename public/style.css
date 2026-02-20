@@ -1,0 +1,148 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f172a;
+  overflow: hidden;
+}
+
+/* Moving gradient blobs */
+.blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(45deg, #ff6ec4, #7873f5);
+  border-radius: 50%;
+  filter: blur(120px);
+  animation: move 20s infinite alternate;
+}
+
+.blob1 { top: -100px; left: -100px; }
+.blob2 { bottom: -100px; right: -100px; }
+
+@keyframes move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(200px, 150px); }
+}
+
+/* App container */
+.container {
+  position: relative;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+  padding: 25px;
+  border-radius: 16px;
+  width: 360px;
+  color: white;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  z-index: 1;
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#darkToggle {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Input */
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.add-btn {
+  background: linear-gradient(45deg, #ff6ec4, #7873f5);
+  border: none;
+  padding: 10px 14px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Todo items */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+li {
+  background: rgba(255,255,255,0.15);
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideIn 0.4s ease;
+  transition: 0.3s;
+}
+
+li:hover {
+  transform: translateX(5px);
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.delete-btn {
+  background: #ff4d6d;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #ff1e4d;
+}
+
+.dragging {
+  opacity: 0.4;
+  transform: scale(1.05);
+}
+
+li {
+  cursor: grab;
+}
+
+li:active {
+  cursor: grabbing;
+}
